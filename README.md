@@ -43,7 +43,7 @@ When evaluation data is flawed, the models trained and benchmarked against it in
 | **Full Retraining** | Re-train the model from scratch using the corrected FLORES dataset |
 | **Incremental Correction** | Adapt an existing model trained on erroneous data without full retraining |
 
-We measure **effectiveness** via translation quality metrics (chrF, COMET) and **efficiency** via training time and compute resources.
+We measure **effectiveness** via translation quality metrics (chrF++, AfriCOMET) and **efficiency** via training time and compute resources.
 
 <br/>
 
@@ -51,7 +51,7 @@ We measure **effectiveness** via translation quality metrics (chrF, COMET) and *
 
 ## Research Objectives
 
-- **Quantify** the impact of dataset errors on MT evaluation metrics (chrF, COMET)
+- **Quantify** the impact of dataset errors on MT evaluation metrics (chrF++, AfriCOMET)
 - **Evaluate** data-driven error-detection methods (quality estimation, consistency checks)
 - **Compare** quality gains and computational costs of full retraining vs. incremental model correction
 - **Contribute** actionable findings to the low-resource African language NLP community
@@ -386,29 +386,48 @@ main/
   - Results will be stored in a file named "baseline_metrics.json"
 
 # 2. Corrected dataset model evaluation
-  - Open "baseline.ipynb" using Google Colab or Kaggle
+  - Open "corrected-baseline.ipynb" using Google Colab or Kaggle
   - Click "Run All"
+  -In addtion to this; the references, sources and predictions are saved in .json files to be used for the comparative   evaluations.
 
-# 3. Refinement strategy experiment
+# 3. Fine-tuned dataset model evaluation
+  - Open "Fine-tuned.ipynb" using Google Colab or Kaggle
+  - Click "Run All"
+  -In addtion to this; the references, sources and predictions are saved in .json files to be used for the comparative   evaluations.
+
+# 4. Refinement strategy experiment
   - Open "refinements.ipynb" using Google Colab or Kaggle
   - Click "Run All"
 
-  3.1 RAT/RAG implementation
+  4.1 RAT/RAG implementation
     - Will be found under a cell labeled "Refinement RAT/RAG"
     - Results will be stored in a file named "rag_rat_metrics.json"
+    -In addtion to this; the references, sources and predictions are saved in .json files to be used for the comparative   evaluations.
 
-  3.2 Constrained Beam Search
+  4.2 Constrained Beam Search
     - Will be found below RAT/RAG implementation
     - Results will be stored in a file named "constrained_metrics.json"
+    -In addtion to this; the references, sources and predictions are saved in .json files to be used for the comparative   evaluations.
 
-  3.3 Post-Processing and Unicode Normalization
+  4.3 Post-Processing and Unicode Normalization
     - Will be found under a cell labeled "Refinement RAT/RAG"
     - Results will be stored in a file named "rag_rat_metrics.json"
+    -In addtion to this; the references, sources and predictions are saved in .json files to be used for the comparative   evaluations.
 
-# 4. Final comparative evaluation
+# 5. Final comparative evaluation
+In order to run the comparative evaluations ensure that the session storage contains
+-corrected_predictions.json
+-retrained_predictions.json
+-rat_predictions.json
+-constrained_predictions.json
+-post_processing_predictions.json
+
   - Open "AfriCOMET_Eval.ipynb" using Google Colab or Kaggle
   - Click "Run All"
   - Open "PairedBootstrapPipeline.ipynb" using Google Colab or Kaggle
+  - In addition to the prediction .json files above, ensure that the following files are also in the session's storage
+      -retrained_sources.json
+      -retrained_references.json
   - Click "Run All"
 
 ```
