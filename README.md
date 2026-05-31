@@ -320,6 +320,26 @@ We measure **effectiveness** via translation quality metrics (chrF, COMET) and *
 | Full Retraining | *TBD* | *TBD* | *TBD* | *TBD* |
 | Incremental Correction | *TBD* | *TBD* | *TBD* | *TBD* |
 
+### Translation Quality and Efficiency Results
+
+| Experiment | chrF++ | AfriCOMET | Lat. (s) | Thr. |
+| :--- | :--- | :--- | :--- | :--- |
+| **E1** | 57.16 | 0.7384 | 0.63 | 1.59 |
+| **E2** | 58.02 | 0.7384 | 0.70 | 1.44 |
+| **E3** | 55.13 | 0.7171 | 0.20 | 4.91 |
+| **E4a** | 56.37 | 0.7261 | 0.88 | 1.14 |
+| **E4b** | 43.99 | 0.4936 | 4.17 | 0.24 |
+| **E4c** | 49.08 | 0.7152 | 0.17 | 5.96 |
+
+### Paired Bootstrap Resampling Results
+
+| Comparison | Mean Δ | CI Low. | CI Up. | p-value | Sig. (95% CI) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Fine-Tuned vs Corrected** | -0.0382 | -0.0781 | -0.0048 | 0.9904 | Significant (↓) |
+| **RAT vs Corrected** | -0.0192 | -0.0379 | 0.0021 | 0.9634 | Not Significant |
+| **Constrained vs Corrected** | -0.2439 | -0.3800 | -0.1276 | 1.0000 | Significant (↓) |
+| **Post vs Corrected** | -0.0262 | -0.0528 | 0.0024 | 0.9632 | Not Significant |
+
 ### Key Findings
 
 - *To be added upon completion of experiments.*
