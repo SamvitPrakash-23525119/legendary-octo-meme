@@ -127,57 +127,32 @@ We measure **effectiveness** via translation quality metrics (chrF, COMET) and *
 
 ---
 
-## File Structure [Replace with Actual Structure]
+## File Structure
 
 ```
-flores-african-mt/
+main/
 │
-├── data/
-│   ├── flores_original/          # Original (erroneous) FLORES evaluation sets
-│   ├── flores_corrected/         # Corrected FLORES sets (Abdulmumin et al., 2024)
-│   └── splits/                   # Train/dev/test splits used in experiments
-│
-├── src/
-│   ├── 📁 data_validation/       # Dataset validation and error detection
-│   │   ├── quality_estimation.py # QE-based error flagging
-│   │   ├── consistency_check.py  # Cross-reference consistency checks
-│   │   └── utils.py
+├── 📁 Implementation/
+│   ├── 📁 Benchmark Outputs/
+│   │   ├── 📁 sam
+│   │   │   ├── baseline_metrics.json         # Evaluation metrics produced by corrected baseline model
+│   │   │   ├── comet_input.json              # Input used for COMET evaluation
+│   │   │   └── predictions.json              # Predictions made by corrected baseline model
+│   │   │
+│   │   ├── baseline_metrics.json             # Evaluation metrics produced by baseline model
+│   │   ├── baseline_predicitons.json         # Predictions made by baseline model
+│   │   ├── constrained_metrics.json          # Evaluation metrics produced by Constrained Beam Search refinement strategy
+│   │   ├── post_processing_metrics.json      # Evaluation metrics produced by Post Processing refinement strategy
+│   │   └── rag_rat_metrics.json              # Evaluation metrics produced by RAT/RAG refinement strategy
 │   │
-│   ├── 📁 evaluation/            # Metric computation scripts
-│   │   ├── compute_bleu.py       # SacreBLEU wrapper
-│   │   ├── compute_chrf.py       # chrF scorer
-│   │   ├── compute_comet.py      # COMET neural metric
-│   │   └── evaluate_all.py       # Run full evaluation pipeline
-│   │
-│   ├── 📁 retraining/            # Full retraining experiment
-│   │   ├── train.py              # Training entry point
-│   │   ├── config.yaml           # Hyperparameters and model config
-│   │   └── dataset_loader.py
-│   │
-│   └── 📁 incremental_correction/  # Incremental model correction experiment
-│       ├── correct.py            # Correction/fine-tuning entry point
-│       ├── config.yaml
-│       └── adapter_utils.py
-│
-├── 📁 models/
-│   ├── baseline/                 # Saved baseline model checkpoints
-│   ├── retrained/                # Retrained model checkpoints
-│   └── corrected/                # Incrementally corrected model checkpoints
-│
-├── 📁 results/
-│   ├── baseline_metrics.json     # Baseline BLEU/chrF/COMET results
-│   ├── retrained_metrics.json    # Post-retraining results
-│   ├── corrected_metrics.json    # Post-correction results
-│   └── comparison_report.md     # Final comparative analysis
-│
-├── 📁 notebooks/
-│   ├── exploratory_analysis.ipynb  # Dataset error exploration
-│   ├── results_visualization.ipynb # Plots and charts for results
-│   └── ablation_study.ipynb
-│
-├── 📄 requirements.txt
-├── 📄 environment.yml            # Conda environment spec
-├── 📄 .env.example               # Environment variable template
+│   └── 📁 notebooks/                   
+│       ├── AfriCOMET_Eval.ipynb              # AfriCOMET evaluation implementation
+│       ├── Fine-Tuned.ipynb                  # Fine-tuned model implem
+│       ├── PairedBootstrapPipeline.ipynb
+│       ├── baseline.ipynb                    # Baseline model implementation
+│       ├── baseline[Fine-tuned].ipynb        # Model using OPUS100 corpus for fine-tuning
+│       ├── corrected-baseline.ipynb          # Model trained on FLORES+ dataset
+│       └── refinements.ipynb                 # Refinement strategies for improving model performance
 └── 📄 README.md
 ```
 
