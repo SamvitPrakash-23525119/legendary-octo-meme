@@ -1,0 +1,11 @@
+{
+  "model": "AfriNLLB-retrained",
+  "source_lang": "eng_Latn",
+  "target_lang": "zul_Latn",
+  "evaluation_dataset": "FLORES-original",
+  "training_data": "OPUS100",
+  "chrF++": 56.29229333787055,
+  "latency": 0.8853898901242041,
+  "throughput": 1.129445919314926,
+  "num_samples": 1012
+}

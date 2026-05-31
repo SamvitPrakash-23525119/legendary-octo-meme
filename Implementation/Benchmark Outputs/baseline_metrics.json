@@ -1,0 +1,10 @@
+{
+  "model": "AfriNLP/AfriNLLB-12enc-12dec-full-ft-kd",
+  "source_lang": "eng_Latn",
+  "target_lang": "zul_Latn",
+  "chrF++": 57.156174645697334,
+  "latency": 0.6306344362586854,
+  "throughput": 1.5857047165591212,
+  "num_samples": 1012,
+  "AfriCOMET": 0.7383714636139895
+}
