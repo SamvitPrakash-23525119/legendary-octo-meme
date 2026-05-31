@@ -304,22 +304,6 @@ We measure **effectiveness** via translation quality metrics (chrF, COMET) and *
 
 > *Results will be populated as experiments are completed.*
 
-### Baseline Metrics (Erroneous FLORES)
-
-| Language | chrF | COMET |
-|----------|------|-------|
-| *TBD* | — | — |
-| *TBD* | — | — |
-| *TBD* | — | — |
-| *TBD* | — | — |
-
-### Post-Correction Comparison
-
-| Strategy | chrF Δ | COMET Δ | Training Time |  Latency |
-|----------|--------|---------|---------------|-----------|
-| Full Retraining | *TBD* | *TBD* | *TBD* | *TBD* |
-| Incremental Correction | *TBD* | *TBD* | *TBD* | *TBD* |
-
 ### Translation Quality and Efficiency Results
 
 | Experiment | chrF++ | AfriCOMET | Lat. (s) | Thr. |
