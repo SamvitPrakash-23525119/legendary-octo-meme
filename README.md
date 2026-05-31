@@ -424,7 +424,7 @@ main/
 | Member | Student No. | Responsibility |
 |--------|-------------|----------------|
 | **Tlhalefo Dikolomela** | u21507792 | Dataset validation & error detection |
-| **Boloka Kgopodithate** | u20456213 | Evaluation metrics & benchmarking |
+| **Boloka Kgopodithate** | u20456213 | Refinement strategies |
 | **Samvit Prakash** | u23525119 | Model adaptation & incremental correction |
 
 <br/>
@@ -434,11 +434,17 @@ main/
 ## References
 
 - Abdulmumin, I. et al. (2024). *Correcting FLORES Evaluation Dataset for Four African Languages.* WMT 2024.
-- Goyal, N. et al. (2022). *The FLORES-101 Evaluation Benchmark for Low-Resource and Multilingual Machine Translation.* TACL.
-- Krishnan, S. et al. (2016). *ActiveClean: Interactive Data Cleaning for Statistical Modeling.* VLDB.
-- Post, M. (2018). *A Call for Clarity in Reporting BLEU Scores.* WMT.
-- Rei, R. et al. (2020). *COMET: A Neural Framework for MT Evaluation.* EMNLP.
-- Specia, L. et al. (2020). *Findings of the WMT 2020 Shared Task on Quality Estimation.* WMT.
+- Ache, M. (2024). FLORES-101 Dataset. Kaggle.
+- Tummala, V. A. (2024). FLORES-200 Data. Kaggle.
+- Chousa, K. & Morishita, M. (2021). Input Augmentation Improves Constrained Beam Search for Neural Machine Translation: NTT at WAT 2021. WAT.
+- Goyal, N. et al. (2022). The FLORES-101 Evaluation Benchmark for Low-Resource and Multilingual Machine Translation. TACL.
+- Koehn, P. (2004). Statistical Significance Tests for Machine Translation Evaluation. EMNLP.
+- Moslem, Y. et al. (2026). AfriNLLB: Efficient Translation Models for African Languages. AfricaNLP.
+- Nekoto, W. et al. (2020). Participatory Research for Low-Resourced Machine Translation: A Case Study in African Languages. arXiv.
+- Park, C. et al. (2021). Should We Find Another Model?: Improving Neural Machine Translation Performance with One-Piece Tokenization Method Without Model Modification. NAACL-HLT.
+- NLLB Team et al. (2022). No Language Left Behind: Scaling Human-Centered Machine Translation. arXiv.
+- Tiedemann, J. (2012). Parallel Data, Tools and Interfaces in OPUS. LREC.
+- Wang, R.-C. et al. (2025). Hybrid Dictionary–Retrieval-Augmented Generation–Large Language Model for Low-Resource Translation. Engineering Proceedings.
 
 <br/>
 
