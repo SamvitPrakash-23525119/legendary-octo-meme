@@ -377,16 +377,16 @@ main/
 ```bash
 # 1. Run baseline evaluation
   - Open "baseline.ipynb" using Google Colab or Kaggle
-  - Click Run All
+  - Click "Run All"
   - Results will be stored in a file named "baseline_metrics.json"
 
 # 2. Corrected dataset model evaluation
   - Open "baseline.ipynb" using Google Colab or Kaggle
-  - Click "Runall
+  - Click "Run All"
 
 # 3. Refinement strategy experiment
   - Open "refinements.ipynb" using Google Colab or Kaggle
-  - Click Run All
+  - Click "Run All"
 
   3.1 RAT/RAG implementation
     - Will be found under a cell labeled "Refinement RAT/RAG"
