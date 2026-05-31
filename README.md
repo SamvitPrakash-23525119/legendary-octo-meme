@@ -63,6 +63,47 @@ We measure **effectiveness** via translation quality metrics (chrF, COMET) and *
 ## Methodology
 ```
                                 ┌────────────────────────────────────────────────────────────┐
+                                │              FULL MODEL FINE-TUNING PIPELINE               │
+                                └────────────────────────────────────────────────────────────┘
+                                                              │
+                                               ┌──────────────▼──────────────┐
+                                               │ 1. Data Loading: OPUS-100   │
+                                               │    (Train) & FLORES (Eval)  │
+                                               └──────────────┬──────────────┘
+                                                              │
+                                               ┌──────────────▼──────────────┐
+                                               │ 2. Initialization: Load     │
+                                               │    AfriNLLB Base Model      │
+                                               └──────────────┬──────────────┘
+                                                              │
+                                               ┌──────────────▼──────────────┐
+                                               │ 3. Preprocessing: Tokenize  │
+                                               │    Source & Target strings  │
+                                               └──────────────┬──────────────┘
+                                                              │
+                                               ┌──────────────▼──────────────┐
+                                               │ 4. Fine-Tuning: HF Trainer  │
+                                               │    (Updates model weights)  │
+                                               └──────────────┬──────────────┘
+                                                              │
+                                               ┌──────────────▼──────────────┐
+                                               │ 5. Generation: Retrained    │
+                                               │    Model translates eval set│
+                                               └──────────────┬──────────────┘
+                                                              │
+                                               ┌──────────────▼──────────────┐
+                                               │ 6. Evaluation: chrF++,      │
+                                               │    Latency & Throughput     │
+                                               └──────────────┬──────────────┘
+                                                              │
+                                                              ▼
+                                        [ Retrained Metrics & Predictions JSON ]
+
+```
+
+
+```
+                                ┌────────────────────────────────────────────────────────────┐
                                 │             SOFT-CONSTRAINT RAG (LOGIT BOOST)              │
                                 └────────────────────────────────────────────────────────────┘
                                                               │
