@@ -160,67 +160,47 @@ main/
 
 ---
 
-## Setup & Installation [Replace with actual]
+## Setup & Installation 
 
 ```bash
-# Clone the repository
-git clone https://github.com/<your-org>/flores-african-mt.git
-cd flores-african-mt
-
-# Create and activate conda environment
-conda env create -f environment.yml
-conda activate flores-mt
-
-# Or use pip
-pip install -r requirements.txt
-```
-
-### Download Datasets
-
-```bash
-# Download corrected FLORES datasets
-python src/data_validation/utils.py --download --output data/flores_corrected
-
-# Download original FLORES datasets
-python src/data_validation/utils.py --download --original --output data/flores_original
+  Upload notebooks to Google Colab or Kaggle
+  Click "Run All"
 ```
 
 <br/>
 
 ---
 
-## 🚀 Running Experiments [Replace with Actual]
+## 🚀 Running Experiments
 
 ```bash
-# 1. Validate datasets and flag errors
-python src/data_validation/quality_estimation.py \
-  --input data/flores_original \
-  --output results/flagged_errors.json
+# 1. Run baseline evaluation
+  Open "baseline.ipynb" using Google Colab or Kaggle
+  Click Run All
+  Results will be stored in a file named "baseline_metrics.json"
 
-# 2. Run baseline evaluation
-python src/evaluation/evaluate_all.py \
-  --model models/baseline \
-  --data data/flores_original \
-  --output results/baseline_metrics.json
+# 2. Corrected dataset model evaluation
+  Open "baseline.ipynb" using Google Colab or Kaggle
 
-# 3. Full retraining experiment
-python src/retraining/train.py \
-  --config src/retraining/config.yaml \
-  --data data/flores_corrected \
-  --output models/retrained
+# 3. Refinement strategy experiment
+  Open "refinements.ipynb" using Google Colab or Kaggle
+  Click Run All
+  3.1 RAT/RAG implementation
+    Will be found under a cell labeled "Refinement RAT/RAG"
+    Results will be stored in a file named "rag_rat_metrics.json"
+  3.2 Constrained Beam Search
+    Will be found below RAT/RAG implementation
+    Results will be stored in a file named "constrained_metrics.json"
+  3.3 Post-Processing and Unicode Normalization
+    Will be found under a cell labeled "Refinement RAT/RAG"
+    Results will be stored in a file named "rag_rat_metrics.json"
 
-# 4. Incremental correction experiment
-python src/incremental_correction/correct.py \
-  --config src/incremental_correction/config.yaml \
-  --base-model models/baseline \
-  --data data/flores_corrected \
-  --output models/corrected
+# 4. Final comparative evaluation
+  Open "AfriCOMET_Eval.ipynb" using Google Colab or Kaggle
+  Click "Run All"
+  Open "PairedBootstrapPipeline.ipynb" using Google Colab or Kaggle
+  Click "Run All"
 
-# 5. Final comparative evaluation
-python src/evaluation/evaluate_all.py \
-  --models models/retrained models/corrected \
-  --data data/flores_corrected \
-  --output results/
 ```
 
 <br/>
