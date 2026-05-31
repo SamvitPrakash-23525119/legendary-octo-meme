@@ -301,9 +301,6 @@ We measure **effectiveness** via translation quality metrics (chrF, COMET) and *
 ---
 
 ## Results
-```
-# > *Results will be populated as experiments are completed.*
-```
 
 ### Translation Quality and Efficiency Results
 
