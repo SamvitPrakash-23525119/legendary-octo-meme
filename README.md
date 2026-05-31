@@ -301,8 +301,9 @@ We measure **effectiveness** via translation quality metrics (chrF, COMET) and *
 ---
 
 ## Results
-
-> *Results will be populated as experiments are completed.*
+```
+# > *Results will be populated as experiments are completed.*
+```
 
 ### Translation Quality and Efficiency Results
 
@@ -326,7 +327,10 @@ We measure **effectiveness** via translation quality metrics (chrF, COMET) and *
 
 ### Key Findings
 
-- *To be added upon completion of experiments.*
+- Improving the dataset through correction was the only intervention that consistently enhanced performance over the baseline, underscoring the critical role of benchmark quality in reliable machine translation evaluation.
+- Retraining on OPUS100 did not yield performance gains despite increased computational cost, suggesting that larger or additional data alone is insufficient without strong domain alignment, particularly in low-resource settings.
+- Retrieval-Augmented Translation proved to be the most effective refinement approach among the tested modifications. While it did not exceed the baseline, it significantly mitigated the performance drop introduced by retraining without requiring model parameter updates. In comparison, constrained decoding and post-processing methods showed limited effectiveness.
+- Data quality and retrieval-based augmentation are more cost-effective and reliable improvement strategies than large-scale retraining or post-hoc corrections.
 
 <br/>
 
