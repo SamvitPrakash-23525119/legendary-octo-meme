@@ -43,7 +43,7 @@ When evaluation data is flawed, the models trained and benchmarked against it in
 | **Full Retraining** | Re-train the model from scratch using the corrected FLORES dataset |
 | **Incremental Correction** | Adapt an existing model trained on erroneous data without full retraining |
 
-We measure **effectiveness** via translation quality metrics (BLEU, chrF, COMET) and **efficiency** via training time and compute resources.
+We measure **effectiveness** via translation quality metrics (chrF, COMET) and **efficiency** via training time and compute resources.
 
 <br/>
 
@@ -51,7 +51,7 @@ We measure **effectiveness** via translation quality metrics (BLEU, chrF, COMET)
 
 ## Research Objectives
 
-- **Quantify** the impact of dataset errors on MT evaluation metrics (BLEU, chrF, COMET)
+- **Quantify** the impact of dataset errors on MT evaluation metrics (chrF, COMET)
 - **Evaluate** data-driven error-detection methods (quality estimation, consistency checks)
 - **Compare** quality gains and computational costs of full retraining vs. incremental model correction
 - **Contribute** actionable findings to the low-resource African language NLP community
@@ -71,7 +71,7 @@ We measure **effectiveness** via translation quality metrics (BLEU, chrF, COMET)
                           ▼
                ┌─────────────────────┐
                │  Pre-trained Model  │  ◄── Baseline Evaluation
-               │  (Multilingual MT)  │      (BLEU / chrF / COMET)
+               │  (Multilingual MT)  │      (chrF / COMET)
                └──────────┬──────────┘
                           │
            ┌──────────────┴──────────────┐
@@ -105,19 +105,19 @@ We measure **effectiveness** via translation quality metrics (BLEU, chrF, COMET)
 
 ### Baseline Metrics (Erroneous FLORES)
 
-| Language | BLEU | chrF | COMET |
-|----------|------|------|-------|
-| *TBD* | — | — | — |
-| *TBD* | — | — | — |
-| *TBD* | — | — | — |
-| *TBD* | — | — | — |
+| Language | chrF | COMET |
+|----------|------|-------|
+| *TBD* | — | — |
+| *TBD* | — | — |
+| *TBD* | — | — |
+| *TBD* | — | — |
 
 ### Post-Correction Comparison
 
-| Strategy | BLEU Δ | chrF Δ | COMET Δ | Training Time | GPU Hours |
-|----------|--------|--------|---------|---------------|-----------|
-| Full Retraining | *TBD* | *TBD* | *TBD* | *TBD* | *TBD* |
-| Incremental Correction | *TBD* | *TBD* | *TBD* | *TBD* | *TBD* |
+| Strategy | chrF Δ | COMET Δ | Training Time |  Latency |
+|----------|--------|---------|---------------|-----------|
+| Full Retraining | *TBD* | *TBD* | *TBD* | *TBD* |
+| Incremental Correction | *TBD* | *TBD* | *TBD* | *TBD* |
 
 ### Key Findings
 
@@ -256,7 +256,6 @@ python src/evaluation/evaluate_all.py \
 
 | Metric | Description | Reference |
 |--------|-------------|-----------|
-| **BLEU** | N-gram precision-based score; widely used but surface-level | Post (2018) |
 | **chrF** | Character n-gram F-score; more robust for morphologically rich languages | Popović (2015) |
 | **Afri-COMET** | Neural MT evaluation; correlates better with human judgements | Rei et al. (2020) |
 
