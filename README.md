@@ -17,9 +17,8 @@
 
 <br/>
 
-![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![HuggingFace](https://img.shields.io/badge/HuggingFace-Transformers-FF9A00?style=for-the-badge&logo=huggingface&logoColor=white)
-![Status](https://img.shields.io/badge/Status-In_Progress-f59e0b?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Complete-f59e0b?style=for-the-badge)
 ![University](https://img.shields.io/badge/COS_760-Research_Project-6366f1?style=for-the-badge)
 
 <br/>
@@ -338,9 +337,9 @@ We measure **effectiveness** via translation quality metrics (chrF++, AfriCOMET)
 ```
 main/
 │
-├── 📁 Implementation/
-│   ├── 📁 Benchmark Outputs/
-│   │   ├── 📁 sam
+├── Implementation/
+│   ├── Benchmark Outputs/
+│   │   ├── corrected_baseline
 │   │   │   ├── baseline_metrics.json         # Evaluation metrics produced by corrected baseline model
 │   │   │   ├── comet_input.json              # Input used for COMET evaluation
 │   │   │   └── predictions.json              # Predictions made by corrected baseline model
@@ -351,7 +350,7 @@ main/
 │   │   ├── post_processing_metrics.json      # Evaluation metrics produced by Post Processing refinement strategy
 │   │   └── rag_rat_metrics.json              # Evaluation metrics produced by RAT/RAG refinement strategy
 │   │
-│   └── 📁 notebooks/                   
+│   └── notebooks/                   
 │       ├── AfriCOMET_Eval.ipynb              # AfriCOMET evaluation implementation
 │       ├── Fine-Tuned.ipynb                  # Fine-tuned model implem
 │       ├── PairedBootstrapPipeline.ipynb
@@ -359,7 +358,7 @@ main/
 │       ├── baseline[Fine-tuned].ipynb        # Model using OPUS100 corpus for fine-tuning
 │       ├── corrected-baseline.ipynb          # Model trained on FLORES+ dataset
 │       └── refinements.ipynb                 # Refinement strategies for improving model performance
-└── 📄 README.md
+└── README.md
 ```
 
 <br/>
@@ -377,7 +376,7 @@ main/
 
 ---
 
-## 🚀 Running Experiments
+## Running Experiments
 
 ```bash
 # 1. Run baseline evaluation
@@ -387,7 +386,8 @@ main/
 
 # 2. Corrected dataset model evaluation
   - Open "corrected-baseline.ipynb" using Google Colab or Kaggle
-  - Click "Run All"
+  - DO NOT CLICK "Run All"
+  - Please see instructions inside the notebook on how to run the notebook.
   -In addtion to this; the references, sources and predictions are saved in .json files to be used for the comparative   evaluations.
 
 # 3. Fine-tuned dataset model evaluation
